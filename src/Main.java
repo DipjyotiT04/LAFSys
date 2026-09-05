@@ -2,200 +2,151 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static ItemService service = new ItemService();
-    private static Scanner scanner = new Scanner(System.in);
+    static ItemService service = new ItemService();
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("========================================");
-        System.out.println("    CAMPUS LOST & FOUND BOARD");
-        System.out.println("========================================");
+        System.out.println("\n===== LOST & FOUND BOARD =====\n");
 
-        boolean running = true;
-        while (running) {
-            showMenu();
-            String choice = scanner.nextLine().trim();
+        while (true) {
+            System.out.println("1. Post Lost Item");
+            System.out.println("2. Post Found Item");
+            System.out.println("3. View Lost Items");
+            System.out.println("4. View Found Items");
+            System.out.println("5. Search Items");
+            System.out.println("6. Claim Item");
+            System.out.println("7. View Resolved");
+            System.out.println("8. Exit");
 
-            switch (choice) {
-                case "1": postLost(); break;
-                case "2": postFound(); break;
-                case "3": viewLost(); break;
-                case "4": viewFound(); break;
-                case "5": searchItems(); break;
-                case "6": claimItem(); break;
-                case "7": viewResolved(); break;
-                case "8":
-                    System.out.print("Are you sure? (yes/no): ");
-                    if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
-                        System.out.println("Goodbye!");
-                        running = false;
-                    }
-                    break;
-                default:
-                    System.out.println("Invalid choice. Try again.");
+            List<Item> lost = service.getLostItems();
+            List<Item> found = service.getFoundItems();
+            List<Item> resolved = service.getResolvedItems();
+            System.out.println("\nLost: " + lost.size() + " | Found: " + found.size() + " | Resolved: " + resolved.size());
+            System.out.print("\n> ");
+
+            String ch = sc.nextLine().trim();
+
+            if (ch.equals("1")) postItem("LOST");
+            else if (ch.equals("2")) postItem("FOUND");
+            else if (ch.equals("3")) showItems("LOST ITEMS", service.getLostItems());
+            else if (ch.equals("4")) showItems("FOUND ITEMS", service.getFoundItems());
+            else if (ch.equals("5")) search();
+            else if (ch.equals("6")) claim();
+            else if (ch.equals("7")) showItems("RESOLVED", service.getResolvedItems());
+            else if (ch.equals("8")) {
+                System.out.print("Exit? (y/n): ");
+                if (sc.nextLine().trim().toLowerCase().equals("y")) break;
+            } else {
+                System.out.println("Invalid option.");
             }
             System.out.println();
         }
-        scanner.close();
+        sc.close();
+        System.out.println("Bye!");
     }
 
-    private static void showMenu() {
-        System.out.println("----------------------------------------");
-        System.out.println("1. Post Lost Item");
-        System.out.println("2. Post Found Item");
-        System.out.println("3. View Lost Items");
-        System.out.println("4. View Found Items");
-        System.out.println("5. Search Items");
-        System.out.println("6. Claim Item");
-        System.out.println("7. View Resolved Items");
-        System.out.println("8. Exit");
-        System.out.println("----------------------------------------");
-        updateStatus();
-        System.out.print("Choose an option: ");
-    }
+    static void postItem(String type) {
+        System.out.println("\n--- Post " + type + " Item ---");
 
-    private static void updateStatus() {
-        int lost = service.getLostItems().size();
-        int found = service.getFoundItems().size();
-        int resolved = service.getResolvedItems().size();
-        System.out.println("Lost: " + lost + " | Found: " + found + " | Resolved: " + resolved);
-    }
+        System.out.print("Name: ");
+        String name = sc.nextLine().trim();
 
-    private static void printHeader() {
-        System.out.println(String.format("%-5s %-24s %-12s %-20s %-12s %-9s",
-                "ID", "NAME", "CATEGORY", "LOCATION", "DATE", "STATUS"));
-        System.out.println("------------------------------------------------------------------");
-    }
-
-    private static void printItems(List<Item> items) {
-        if (items.isEmpty()) {
-            System.out.println("  No items to show.");
-            return;
-        }
-        printHeader();
-        for (Item item : items) {
-            System.out.println(item.getDisplayText());
-        }
-        System.out.println("Records found: " + items.size());
-    }
-
-    private static void postLost() {
-        postItem(ItemService.TYPE_LOST);
-    }
-
-    private static void postFound() {
-        postItem(ItemService.TYPE_FOUND);
-    }
-
-    private static void postItem(String type) {
-        System.out.println("--- Post " + type + " Item ---");
-
-        System.out.print("Item Name: ");
-        String name = scanner.nextLine().trim();
-
-        System.out.println("Categories: Electronics, Books, ID Card, Bags, Keys, Clothes, Other");
-        System.out.print("Category: ");
-        String category = scanner.nextLine().trim();
+        System.out.print("Category (Electronics/Books/ID Card/Bags/Keys/Clothes/Other): ");
+        String cat = sc.nextLine().trim();
 
         System.out.print("Date (dd-mm-yyyy): ");
-        String date = scanner.nextLine().trim();
+        String date = sc.nextLine().trim();
 
         System.out.print("Location: ");
-        String location = scanner.nextLine().trim();
+        String loc = sc.nextLine().trim();
 
-        System.out.print("Contact Number: ");
-        String contact = scanner.nextLine().trim();
+        System.out.print("Contact: ");
+        String contact = sc.nextLine().trim();
 
-        if (!Validator.isNotEmpty(name) || !Validator.isNotEmpty(location) || !Validator.isNotEmpty(contact)) {
-            System.out.println("ERROR: Name, Location, and Contact cannot be empty.");
+        if (name.isEmpty() || loc.isEmpty() || contact.isEmpty()) {
+            System.out.println("Name, location and contact are required.");
             return;
         }
         if (!Validator.isValidDate(date)) {
-            System.out.println("ERROR: Invalid date. Use dd-mm-yyyy format.");
+            System.out.println("Bad date format. Use dd-mm-yyyy.");
             return;
         }
 
-        int id = service.postItem(type, name, category, date, location, contact);
-        System.out.println("Saved. Your item id is " + id + ". Keep it safe for claiming.");
+        int id = service.postItem(type, name, cat, date, loc, contact);
+        System.out.println("Saved. ID: " + id);
     }
 
-    private static void viewLost() {
-        System.out.println("--- LOST ITEMS ---");
-        printItems(service.getLostItems());
+    static void showItems(String title, List<Item> items) {
+        System.out.println("\n--- " + title + " ---");
+        if (items.isEmpty()) {
+            System.out.println("Nothing here.");
+            return;
+        }
+        System.out.printf("%-4s %-20s %-12s %-15s %-12s %-9s\n", "ID", "NAME", "CATEGORY", "LOCATION", "DATE", "STATUS");
+        System.out.println("--------------------------------------------------------------------");
+        for (Item i : items) {
+            System.out.println(i.display());
+        }
+        System.out.println("Total: " + items.size());
     }
 
-    private static void viewFound() {
-        System.out.println("--- FOUND ITEMS ---");
-        printItems(service.getFoundItems());
-    }
+    static void search() {
+        System.out.println("\n1. Keyword");
+        System.out.println("2. Category");
+        System.out.print("> ");
+        String ch = sc.nextLine().trim();
 
-    private static void viewResolved() {
-        System.out.println("--- RESOLVED ITEMS ---");
-        printItems(service.getResolvedItems());
-    }
-
-    private static void searchItems() {
-        System.out.println("--- Search Items ---");
-        System.out.println("1. Search by keyword");
-        System.out.println("2. Search by category");
-        System.out.print("Choose: ");
-        String choice = scanner.nextLine().trim();
-
-        if (choice.equals("1")) {
-            System.out.print("Enter keyword: ");
-            String keyword = scanner.nextLine().trim();
-            if (keyword.isEmpty()) {
-                System.out.println("ERROR: Type a keyword first.");
+        if (ch.equals("1")) {
+            System.out.print("Keyword: ");
+            String kw = sc.nextLine().trim();
+            if (kw.isEmpty()) {
+                System.out.println("Type something first.");
                 return;
             }
-            List<Item> results = service.searchByKeyword(keyword);
-            System.out.println("SEARCH RESULTS FOR \"" + keyword.toUpperCase() + "\" (" + results.size() + " FOUND)");
-            printItems(results);
-        } else if (choice.equals("2")) {
-            System.out.println("Categories: Electronics, Books, ID Card, Bags, Keys, Clothes, Other");
-            System.out.print("Enter category: ");
-            String category = scanner.nextLine().trim();
-            List<Item> results = service.searchByCategory(category);
-            System.out.println("CATEGORY: " + category.toUpperCase() + " (" + results.size() + " FOUND)");
-            printItems(results);
+            List<Item> res = service.searchByKeyword(kw);
+            System.out.println("\nResults for \"" + kw + "\" (" + res.size() + ")");
+            for (Item i : res) System.out.println(i.display());
+        } else if (ch.equals("2")) {
+            System.out.print("Category: ");
+            String cat = sc.nextLine().trim();
+            List<Item> res = service.searchByCategory(cat);
+            System.out.println("\nCategory: " + cat + " (" + res.size() + ")");
+            for (Item i : res) System.out.println(i.display());
         } else {
-            System.out.println("Invalid choice.");
+            System.out.println("Invalid option.");
         }
     }
 
-    private static void claimItem() {
-        System.out.println("--- Claim Item ---");
-        System.out.print("Enter item ID to claim: ");
-        String input = scanner.nextLine().trim();
+    static void claim() {
+        System.out.print("\nItem ID to claim: ");
+        String input = sc.nextLine().trim();
 
         int id;
         try {
             id = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            System.out.println("ERROR: Please enter a valid number.");
+            System.out.println("Enter a valid number.");
             return;
         }
 
         Item item = service.getItemById(id);
         if (item == null) {
-            System.out.println("No item with id " + id);
+            System.out.println("No item with ID " + id);
             return;
         }
-        if (item.getStatus().equals(ItemService.STATUS_RESOLVED)) {
-            System.out.println("Item " + id + " is already RESOLVED.");
+        if (item.getStatus().equals("RESOLVED")) {
+            System.out.println("Already resolved.");
             return;
         }
 
-        System.out.println("Item: " + item.getDisplayText());
-        System.out.println("Contact: " + item.getContact());
-        System.out.print("Mark as RESOLVED? (yes/no): ");
-        String confirm = scanner.nextLine().trim();
-        if (confirm.equalsIgnoreCase("yes")) {
-            boolean success = service.claimItem(id);
-            if (success) {
-                System.out.println("Item " + id + " claimed successfully!");
+        System.out.println(item.display());
+        System.out.print("Mark resolved? (y/n): ");
+        if (sc.nextLine().trim().toLowerCase().equals("y")) {
+            if (service.claimItem(id)) {
+                System.out.println("Done.");
             }
         } else {
-            System.out.println("Claim cancelled.");
+            System.out.println("Cancelled.");
         }
     }
 }

@@ -1,12 +1,6 @@
 public class Item {
-    private int id;
-    private String type;
-    private String name;
-    private String category;
-    private String date;
-    private String location;
-    private String contact;
-    private String status;
+    int id;
+    String type, name, category, date, location, contact, status;
 
     public Item(int id, String type, String name, String category, String date, String location, String contact, String status) {
         this.id = id;
@@ -27,14 +21,13 @@ public class Item {
     public String getLocation() { return location; }
     public String getContact() { return contact; }
     public String getStatus() { return status; }
+    public void setStatus(String s) { this.status = s; }
 
-    public void setStatus(String status) { this.status = status; }
-
-    public String toFileLine() {
-        return id + " | " + type + " | " + name + " | " + category + " | " + date + " | " + location + " | " + contact + " | " + status;
+    public String toLine() {
+        return id + "|" + type + "|" + name + "|" + category + "|" + date + "|" + location + "|" + contact + "|" + status;
     }
 
-    public String getDisplayText() {
-        return String.format("%-5d %-24s %-12s %-20s %-12s %-9s", id, name, category, location, date, status);
+    public String display() {
+        return String.format("%-4d %-20s %-12s %-15s %-12s %-9s", id, name, category, location, date, status);
     }
 }
