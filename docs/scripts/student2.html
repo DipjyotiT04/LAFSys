@@ -3,167 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @page { size: A4; margin: 20mm; }
+  @page { size: A4; margin: 18mm; }
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.45;
   }
   h1 {
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #142640;
   }
-  .time {
-    font-size: 16px;
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  .slides {
+  .meta {
     font-size: 14px;
     text-align: center;
-    color: #b8861a;
-    margin-bottom: 20px;
-    font-weight: bold;
+    color: #666;
+    margin-bottom: 18px;
   }
   .item {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .say {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #142640;
   }
   .do {
-    font-size: 16px;
+    font-size: 15px;
     color: #4a576b;
-    margin-top: 3px;
-    padding-left: 15px;
+    margin-top: 2px;
+    padding-left: 12px;
     border-left: 3px solid #b8861a;
+  }
+  .note {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+    margin-top: 2px;
   }
   .sep {
     border: none;
     border-top: 1px dashed #ccc;
-    margin: 12px 0;
+    margin: 10px 0;
   }
 </style>
 </head>
 <body>
 
 <h1>Student 2 - Java Concepts &amp; Class Design</h1>
-<div class="time">Time: 2 minutes 30 seconds</div>
-<div class="slides">Slides: Slide 03 (Java Concepts Used) + Slide 04 (Class Design)</div>
+<div class="meta">Slides 4–5 | Time: 2 min 30 sec | Role: Technical depth, show OOP knowledge</div>
 
 <hr class="sep">
 
 <div class="item">
-  <div class="say">"Now I will explain the Java concepts used in our project."</div>
-  <div class="do">Click to slide 03 - Java Concepts Used.</div>
+  <div class="say">"So now that you know what the system does — let me show you how it is built."</div>
+  <div class="do">Click to Slide 03 — Java Concepts Used. Stand to the left of the screen.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Our project uses nine Java concepts. Each card shows the syntax used."</div>
-  <div class="do">Point at the grid of 9 concept cards.</div>
+  <div class="say">"We used nine Java concepts in this project. Each card shows the actual syntax we wrote."</div>
+  <div class="do">Sweep hand across the grid of 9 cards.</div>
 </div>
 
 <div class="item">
-  <div class="say">"First - Variables and data types. We use int id, String name, boolean isOpen."</div>
-  <div class="do">Point at card 1 (STRING badge).</div>
+  <div class="say">"The first one is the basics — variables and data types. We use int for IDs, Strings for names, booleans for status."</div>
+  <div class="do">Point at Card 1 — STRING badge. Point at the code snippet.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Second - ArrayList. We use List of Item equals new ArrayList to store items."</div>
-  <div class="do">Point at card 2 (LIST badge).</div>
+  <div class="say">"Then we need to store multiple items. That is where ArrayList comes in — List of Item, created with new ArrayList."</div>
+  <div class="do">Point at Card 2 — LIST badge.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Third - Static methods. We use static for isValidDate and searchBy methods."</div>
-  <div class="do">Point at card 3 (STATIC badge).</div>
+  <div class="say">"We use static methods in our Validator class. You do not need to create an object — just call Validator dot isValidDate directly."</div>
+  <div class="do">Point at Card 3 — STATIC badge.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Fourth - Conditional statements. We use if else to check user input."</div>
-  <div class="do">Point at card 4 (IF/ELSE badge).</div>
+  <div class="say">"Conditional statements — if the user types 1, we post a lost item. If they type 8, we exit."</div>
+  <div class="do">Point at Card 4 — IF/ELSE badge.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Fifth - Classes and objects. We have 6 classes. We create objects like new Item."</div>
-  <div class="do">Point at card 5 (6 CLASSES badge). Emphasize 6 classes.</div>
+  <div class="say">"This is the big one — classes and objects. Our project has six classes. Each one has a single job."</div>
+  <div class="do">Point at Card 5 — 6 CLASSES badge. Emphasize "six" with your fingers.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Sixth - Encapsulation. We use private fields and public getters."</div>
-  <div class="do">Point at card 6 (PRIVATE badge).</div>
+  <div class="say">"Encapsulation — we keep fields private and provide public getters. Only status has a setter because that is the only thing that changes."</div>
+  <div class="do">Point at Card 6 — PRIVATE badge.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Seventh - Loops. We use while true for the menu loop and for each for items."</div>
-  <div class="do">Point at card 7 (WHILE/FOR badge).</div>
+  <div class="say">"Loops — while true keeps the menu running. For-each loops let us go through every item in the list."</div>
+  <div class="do">Point at Card 7 — WHILE/FOR badge.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Eighth - Constructors. We use Item constructor with this dot id equals id."</div>
-  <div class="do">Point at card 8 (ITEM badge).</div>
+  <div class="say">"Constructors — when we create a new Item, the constructor sets all eight fields at once using the this keyword."</div>
+  <div class="do">Point at Card 8 — ITEM badge.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Ninth - Streams and lambdas. We use items dot stream dot filter dot collect."</div>
-  <div class="do">Point at card 9 (STREAM badge).</div>
+  <div class="say">"And finally — streams and lambdas. Instead of writing long loops to filter items, we use items dot stream dot filter dot collect. Clean, short, readable."</div>
+  <div class="do">Point at Card 9 — STREAM badge. Make a flowing motion with your hand to show the pipeline.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now let me show you the class design."</div>
-  <div class="do">Click to slide 04 - Class Design.</div>
+  <div class="say">"Now let me show you how these classes fit together."</div>
+  <div class="do">Click to Slide 04 — Class Design. The UML diagram appears.</div>
+  <div class="note">Smooth transition from concepts to architecture.</div>
 </div>
 
 <div class="item">
-  <div class="say">"We have 6 classes in the UML diagram. Main, ItemService, StorageManager, Item, Validator, and Tests."</div>
-  <div class="do">Point at each class box in the UML diagram.</div>
+  <div class="say">"This is our UML class diagram. Six classes — and the data file."</div>
+  <div class="do">Point at the entire diagram with a sweep gesture.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Main handles the menu and user input. It has Scanner and ItemService."</div>
-  <div class="do">Point at Main class box.</div>
+  <div class="say">"Main sits at the top. It handles the menu and user input. It has a Scanner and an ItemService."</div>
+  <div class="do">Point at the Main class box.</div>
 </div>
 
 <div class="item">
-  <div class="say">"ItemService is the business logic. It has postItem, getLostItems, getFoundItems."</div>
-  <div class="do">Point at ItemService class box.</div>
+  <div class="say">"Main never touches the file directly. It calls ItemService."</div>
+  <div class="do">Trace the arrow from Main to ItemService. Shake head slightly on "never touches the file."</div>
 </div>
 
 <div class="item">
-  <div class="say">"StorageManager handles file operations. It has load, append, and rewrite."</div>
-  <div class="do">Point at StorageManager class box.</div>
+  <div class="say">"ItemService is the brain. It has postItem, getLostItems, getFoundItems, and claimItem."</div>
+  <div class="do">Point at the ItemService class box.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Item is the data model with 8 fields - id, type, name, category, date, location, contact, status."</div>
-  <div class="do">Point at Item class box showing the fields.</div>
+  <div class="say">"ItemService never reads user input. It only processes data."</div>
+  <div class="do">Point at ItemService methods. Nod for emphasis.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Validator is a utility class with isNotEmpty and isValidDate."</div>
+  <div class="say">"StorageManager handles all file operations — load, append, and rewrite. It reads and writes to data slash items dot txt."</div>
+  <div class="do">Point at StorageManager class box, then at the data node.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Item is the data model — eight fields, getters, one setter, and two formatting methods."</div>
+  <div class="do">Point at the Item class box showing fields and methods.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Validator is a standalone utility. It depends on nothing. Just two static methods for checking input."</div>
   <div class="do">Point at Validator class box.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Tests has passed and failed counters and a check method."</div>
+  <div class="say">"And Tests is our test harness — passed and failed counters, and a check method."</div>
   <div class="do">Point at Tests class box.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Main never touches the file. ItemService never reads user input. Each class has one role."</div>
-  <div class="do">Trace the dependency arrows: Main uses ItemService, ItemService uses StorageManager, StorageManager reads writes data/items.txt.</div>
+  <div class="say">"The key rule — each class has one job. Main does UI. ItemService does logic. StorageManager does files. That is separation of concerns."</div>
+  <div class="do">Point at each layer as you name it. Make a chopping motion for "one job."</div>
 </div>
 
 <div class="item">
-  <div class="say">"I will now hand over to explain the implementation."</div>
-  <div class="do">Gesture towards next presenter.</div>
+  <div class="say">"That covers the design. Now over to explain the actual implementation code."</div>
+  <div class="do">Turn towards next speaker. Step back.</div>
 </div>
 
 </body>

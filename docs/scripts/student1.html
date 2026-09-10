@@ -3,152 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @page { size: A4; margin: 20mm; }
+  @page { size: A4; margin: 18mm; }
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.45;
   }
   h1 {
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #142640;
   }
-  .time {
-    font-size: 16px;
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  .slides {
+  .meta {
     font-size: 14px;
     text-align: center;
-    color: #b8861a;
-    margin-bottom: 20px;
-    font-weight: bold;
+    color: #666;
+    margin-bottom: 18px;
   }
   .item {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .say {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #142640;
   }
   .do {
-    font-size: 16px;
+    font-size: 15px;
     color: #4a576b;
-    margin-top: 3px;
-    padding-left: 15px;
+    margin-top: 2px;
+    padding-left: 12px;
     border-left: 3px solid #b8861a;
+  }
+  .note {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+    margin-top: 2px;
   }
   .sep {
     border: none;
     border-top: 1px dashed #ccc;
-    margin: 12px 0;
+    margin: 10px 0;
   }
 </style>
 </head>
 <body>
 
-<h1>Student 1 - Introduction, Problem &amp; Overview</h1>
-<div class="time">Time: 2 minutes 30 seconds</div>
-<div class="slides">Slides: Cover + Slide 01 (The Problem) + Slide 02 (Application Overview)</div>
+<h1>Student 1 - Opening &amp; Problem Statement</h1>
+<div class="meta">Slides 1–3 | Time: 2 min 30 sec | Role: Set the context, hook the audience</div>
 
 <hr class="sep">
 
 <div class="item">
-  <div class="say">"Good morning. Our project is called LAFSys - a Campus Lost and Found Board."</div>
-  <div class="do">Point at the cover slide showing LAFSys title.</div>
+  <div class="say">"Before I start — how many of you have lost something on campus and had no idea where to look for it?"</div>
+  <div class="do">Pause 2 seconds. Make eye contact with the audience. Let hands go up.</div>
+  <div class="note">This opens with a question — grabs attention immediately.</div>
 </div>
 
 <div class="item">
-  <div class="say">"It is a Java console application for posting, searching, and claiming items."</div>
-  <div class="do">Point at the tagline on the cover slide.</div>
+  <div class="say">"That is exactly the problem we are solving. Our project is called LAFSys — a Campus Lost and Found Board."</div>
+  <div class="do">Point at the LAFSys title on the cover slide.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now let me explain why we built this."</div>
-  <div class="do">Click to slide 01 - The Problem.</div>
+  <div class="say">"It is a Java console application — posted, searched, and claimed — all from one place."</div>
+  <div class="do">Gesture with open palm towards the tagline line on the cover.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Every day on campus, items are lost - and most are never returned."</div>
-  <div class="do">Point at the pull quote on slide 01.</div>
+  <div class="say">"We are Group 5, from the Department of Computer Science, for the course Object-Oriented Programming with Java."</div>
+  <div class="do">Point at GROUP 5 and course name on the cover slide.</div>
 </div>
 
 <div class="item">
-  <div class="say">"This happens in hostels, libraries, labs, and cafeterias."</div>
-  <div class="do">Point at the locations line.</div>
+  <div class="say">"Let me show you why this matters."</div>
+  <div class="do">Click to Slide 01 — The Problem. Step slightly to the side so the slide is visible.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Every day on campus — items are lost. And most are never returned."</div>
+  <div class="do">Point at the pull quote on the slide. Emphasize "most are never returned" with a slight hand gesture.</div>
+</div>
+
+<div class="item">
+  <div class="say">"This happens in hostels. Libraries. Labs. Cafeterias. Everywhere."</div>
+  <div class="do">Count four locations on your fingers, one per word.</div>
 </div>
 
 <div class="item">
   <div class="say">"There are five practical reasons this project exists."</div>
-  <div class="do">Point at the five problems section.</div>
+  <div class="do">Hold up five fingers. Then lower to point at the slide.</div>
 </div>
 
 <div class="item">
-  <div class="say">"First - no central place to record a lost item or report one that was found."</div>
-  <div class="do">Point at problem 01.</div>
+  <div class="say">"Number one — no central place to record a lost item or report one that was found."</div>
+  <div class="do">Point at problem 01 on the slide.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Second - notice boards are static and scattered across many buildings."</div>
+  <div class="say">"Number two — notice boards are static and scattered across many buildings."</div>
   <div class="do">Point at problem 02.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Third - there is no way to search past reports."</div>
+  <div class="say">"Number three — no way to search past reports. Users have to scroll and guess."</div>
   <div class="do">Point at problem 03.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Fourth - manual matching between finders and owners is slow and unreliable."</div>
+  <div class="say">"Number four — manual matching between finders and owners is slow and unreliable."</div>
   <div class="do">Point at problem 04.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Fifth - there is no record of resolution, so the same item gets asked about again and again."</div>
-  <div class="do">Point at problem 05.</div>
+  <div class="say">"And number five — no record of resolution. So the same item gets asked about again and again."</div>
+  <div class="do">Point at problem 05. Raise voice slightly on "again and again" for emphasis.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now let me show you how our system works."</div>
-  <div class="do">Click to slide 02 - Application Overview.</div>
+  <div class="say">"So what did we build to fix this?"</div>
+  <div class="do">Pause 1 second. Click to Slide 02 — Application Overview.</div>
+  <div class="note">Transition question — keeps audience engaged.</div>
 </div>
 
 <div class="item">
-  <div class="say">"There are four steps. Step one - Post. Enter name, category, date, location, and contact."</div>
-  <div class="do">Point at step 1 on slide 02.</div>
+  <div class="say">"Four simple steps. Post. Save. Search. Claim."</div>
+  <div class="do">Point at each of the four numbered steps on the slide, one by one.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Step two - Save. The record is appended to items.txt on disk."</div>
-  <div class="do">Point at step 2. Emphasize the word appended.</div>
+  <div class="say">"You post an item — enter the name, category, date, location, and contact."</div>
+  <div class="do">Point at Step 1 — Post.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Step three - Search. Anyone can browse or search the list anytime."</div>
-  <div class="do">Point at step 3.</div>
+  <div class="say">"It gets saved — appended to a file on disk. Not overwritten. Appended."</div>
+  <div class="do">Point at Step 2 — Save. Emphasize "appended" with a hand motion showing adding to end.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Step four - Claim. The owner marks the item as resolved."</div>
-  <div class="do">Point at step 4.</div>
+  <div class="say">"Anyone can search the list anytime. By keyword, by category."</div>
+  <div class="do">Point at Step 3 — Search.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The five major features are - Post lost or found, View all records, Search by keyword, Claim items, and Persist to items.txt."</div>
-  <div class="do">Point at the five feature cards one by one.</div>
+  <div class="say">"And when the owner finds it — they claim it. Status changes from OPEN to RESOLVED."</div>
+  <div class="do">Point at Step 4 — Claim.</div>
 </div>
 
 <div class="item">
-  <div class="say">"I will now hand over to explain the Java concepts we used."</div>
-  <div class="do">Gesture towards next presenter.</div>
+  <div class="say">"The five major features — Post, View, Search, Claim, and Persist."</div>
+  <div class="do">Point at each of the five feature cards.</div>
+</div>
+
+<div class="item">
+  <div class="say">"That is the overview. Now over to my teammate to explain the Java concepts behind this."</div>
+  <div class="do">Turn body towards next speaker. Make eye contact with them. Step back.</div>
 </div>
 
 </body>

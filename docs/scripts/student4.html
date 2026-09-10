@@ -3,172 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @page { size: A4; margin: 20mm; }
+  @page { size: A4; margin: 18mm; }
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.45;
   }
   h1 {
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #142640;
   }
-  .time {
-    font-size: 16px;
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  .slides {
+  .meta {
     font-size: 14px;
     text-align: center;
-    color: #b8861a;
-    margin-bottom: 20px;
-    font-weight: bold;
+    color: #666;
+    margin-bottom: 18px;
   }
   .item {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .say {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #142640;
   }
   .do {
-    font-size: 16px;
+    font-size: 15px;
     color: #4a576b;
-    margin-top: 3px;
-    padding-left: 15px;
+    margin-top: 2px;
+    padding-left: 12px;
     border-left: 3px solid #b8861a;
+  }
+  .note {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+    margin-top: 2px;
   }
   .sep {
     border: none;
     border-top: 1px dashed #ccc;
-    margin: 12px 0;
+    margin: 10px 0;
   }
 </style>
 </head>
 <body>
 
 <h1>Student 4 - Live Demo, Testing &amp; Conclusion</h1>
-<div class="time">Time: 2 minutes 30 seconds</div>
-<div class="slides">Slides: Slide 07 (Live Demonstration) + Slide 08 (Conclusion)</div>
+<div class="meta">Slides 8–9 | Time: 2 min 30 sec | Role: Prove it works, wrap up strong</div>
 
 <hr class="sep">
 
 <div class="item">
-  <div class="say">"Now I will demonstrate the application live and show the test results."</div>
-  <div class="do">Click to slide 07 - Live Demonstration.</div>
+  <div class="say">"Enough slides. Let me show you the real thing."</div>
+  <div class="do">Click to Slide 07 — Live Demonstration. Then immediately switch to the terminal window.</div>
+  <div class="note">Confident opening — "enough slides" signals action.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The demo shows six things - main menu with live counters, posting a lost item, viewing lost items, searching items, claiming an item, and the end-to-end flow."</div>
-  <div class="do">Point at the six caption frames on slide 07.</div>
+  <div class="say">"I will compile and run the program right now."</div>
+  <div class="do">In terminal, type: javac -d bin src/*.java — Press Enter. Show compilation completes with no errors.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Let me run the application now."</div>
-  <div class="do">Open terminal. Type: java -cp bin Main. Press Enter.</div>
+  <div class="say">"Compilation successful. Now let us run it."</div>
+  <div class="do">Type: java -cp bin Main — Press Enter. The menu appears.</div>
 </div>
 
 <div class="item">
-  <div class="say">"This is the main menu with live counters showing Lost, Found, and Resolved counts."</div>
-  <div class="do">Point at the menu output in terminal.</div>
+  <div class="say">"This is the main menu. Notice the live counters at the bottom — Lost, Found, Resolved. These update in real time."</div>
+  <div class="do">Point at the terminal output showing the menu and counters.</div>
 </div>
 
 <div class="item">
   <div class="say">"Let me post a lost item. I choose option 1."</div>
-  <div class="do">Type 1 in terminal. Press Enter.</div>
+  <div class="do">Type 1 — Press Enter.</div>
 </div>
 
 <div class="item">
-  <div class="say">"I enter the item name, category, date, location, and contact number."</div>
-  <div class="do">Fill in all fields. Press Enter after each.</div>
+  <div class="say">"I will enter — Phone as the name, Electronics as category, today's date, Library as the location, and a contact number."</div>
+  <div class="do">Type each field one by one. Pause briefly after each Enter so audience can see.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The item is saved with an ID number."</div>
-  <div class="do">Point at the confirmation message showing the ID.</div>
+  <div class="say">"Saved. The system assigned it ID 16. Let us verify."</div>
+  <div class="do">Point at the confirmation message showing "Saved. ID: 16."</div>
 </div>
 
 <div class="item">
-  <div class="say">"Let me view lost items. I choose option 3."</div>
-  <div class="do">Type 3 in terminal. Press Enter. Point at the table output.</div>
+  <div class="say">"Option 3 — View Lost Items."</div>
+  <div class="do">Type 3 — Press Enter. The table appears.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now let me search for it. I choose option 5, then keyword search."</div>
-  <div class="do">Type 5, then 1, then the keyword. Point at search results.</div>
+  <div class="say">"There it is. ID 16, Phone, Electronics, Library, today's date, status OPEN. The counter now shows Lost: 2."</div>
+  <div class="do">Point at the new row in the table. Then point at the updated counter.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Let me claim the item. I choose option 6, enter the ID, and confirm."</div>
-  <div class="do">Type 6, enter ID, type y. Point at the Done message.</div>
+  <div class="say">"Now let me search for it. Option 5 — Keyword search — type Phone."</div>
+  <div class="do">Type 5, then 1, then Phone — Press Enter after each.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The demo shows the full flow - Post, Save, Search by keyword, view result, Claim, mark resolved, and update items.txt."</div>
-  <div class="do">Point at the arrow chain on the right side of slide 07.</div>
+  <div class="say">"One result found. The stream filtered all items and returned only the match."</div>
+  <div class="do">Point at the search result in the terminal.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now let me show the test results."</div>
-  <div class="do">Exit the app. Type: java -cp bin Tests. Press Enter.</div>
+  <div class="say">"Now the best part — claiming the item. Option 6."</div>
+  <div class="do">Type 6 — Press Enter.</div>
 </div>
 
 <div class="item">
-  <div class="say">"All 23 tests passed with 0 failures."</div>
-  <div class="do">Point at the test output showing passed and failed counts.</div>
+  <div class="say">"Enter the item ID — 16. The system shows the item details and asks for confirmation."</div>
+  <div class="do">Type 16 — Press Enter. Point at the item display.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now for the conclusion."</div>
-  <div class="do">Click to slide 08 - Conclusion.</div>
+  <div class="say">"Mark resolved? Y."</div>
+  <div class="do">Type y — Press Enter. "Done." appears.</div>
 </div>
 
 <div class="item">
-  <div class="say">"We learned six things from building LAFSys."</div>
-  <div class="do">Point at the six learning cards.</div>
+  <div class="say">"Done. The status changed from OPEN to RESOLVED. The file was rewritten."</div>
+  <div class="do">Point at the "Done." message. Pause 1 second.</div>
 </div>
 
 <div class="item">
-  <div class="say">"First - Separation of concerns. Model, service, storage, UI - each class has one role."</div>
-  <div class="do">Point at card 1.</div>
+  <div class="say">"Let me verify. View Resolved — option 7."</div>
+  <div class="do">Type 7 — Press Enter.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Second - Input validation. Reject bad data before it touches storage."</div>
-  <div class="do">Point at card 2.</div>
+  <div class="say">"There it is. ID 16, Phone, status RESOLVED. The full cycle — Post, Save, Search, Claim — complete."</div>
+  <div class="do">Point at the resolved item in the table. Make a circular motion to indicate "full cycle."</div>
 </div>
 
 <div class="item">
-  <div class="say">"Third - Streams and lambdas. Concise and readable filter and search logic."</div>
-  <div class="do">Point at card 3.</div>
+  <div class="say">"Now let me show you the test results."</div>
+  <div class="do">Exit the app (type 8, then y). Type: java -cp bin Tests — Press Enter.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Fourth - Git collaboration. Branches, commits, and pull requests on one codebase."</div>
-  <div class="do">Point at card 4.</div>
+  <div class="say">"23 tests. All passed. Zero failures."</div>
+  <div class="do">Point at the final line showing "23 passed, 0 failed." Let it sit for 2 seconds.</div>
+  <div class="note">Pause here — this is a strong moment. Let it sink in.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Fifth - File I O with care. Files are always closed safely."</div>
-  <div class="do">Point at card 5.</div>
+  <div class="say">"Let me now wrap up with what we learned."</div>
+  <div class="do">Click to Slide 08 — Conclusion.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Sixth - Testing early. A test harness catches regressions before the demo."</div>
-  <div class="do">Point at card 6.</div>
+  <div class="say">"Six things. First — Separation of concerns. Model, service, storage, UI. Each class has one role."</div>
+  <div class="do">Point at Card 1.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Thank you. Questions and discussion are welcome."</div>
-  <div class="do">Step back. Be ready for questions.</div>
+  <div class="say">"Second — Input validation. We reject bad data before it ever touches storage."</div>
+  <div class="do">Point at Card 2.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Third — Streams and lambdas. Made our filter and search logic concise and readable."</div>
+  <div class="do">Point at Card 3.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Fourth — Git collaboration. Branches, commits, and pull requests on one codebase."</div>
+  <div class="do">Point at Card 4.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Fifth — File I/O with care. Files are always closed safely using try-with-resources."</div>
+  <div class="do">Point at Card 5.</div>
+</div>
+
+<div class="item">
+  <div class="say">"And sixth — Testing early. A test harness catches regressions before the demo."</div>
+  <div class="do">Point at Card 6. Emphasize "before the demo" with a nod.</div>
+</div>
+
+<div class="item">
+  <div class="say">"That is LAFSys. 403 lines of Java. No external libraries. A real solution to a real problem."</div>
+  <div class="do">Stand straight. Make eye contact with the audience.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Thank you. We are happy to take any questions."</div>
+  <div class="do">Step back slightly. Smile. Open posture — hands not crossed.</div>
+  <div class="note">End with confidence. Wait for questions.</div>
 </div>
 
 </body>

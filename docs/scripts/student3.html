@@ -3,152 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @page { size: A4; margin: 20mm; }
+  @page { size: A4; margin: 18mm; }
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.45;
   }
   h1 {
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #142640;
   }
-  .time {
-    font-size: 16px;
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  .slides {
+  .meta {
     font-size: 14px;
     text-align: center;
-    color: #b8861a;
-    margin-bottom: 20px;
-    font-weight: bold;
+    color: #666;
+    margin-bottom: 18px;
   }
   .item {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .say {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #142640;
   }
   .do {
-    font-size: 16px;
+    font-size: 15px;
     color: #4a576b;
-    margin-top: 3px;
-    padding-left: 15px;
+    margin-top: 2px;
+    padding-left: 12px;
     border-left: 3px solid #b8861a;
+  }
+  .note {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+    margin-top: 2px;
   }
   .sep {
     border: none;
     border-top: 1px dashed #ccc;
-    margin: 12px 0;
+    margin: 10px 0;
   }
 </style>
 </head>
 <body>
 
-<h1>Student 3 - Implementation (Part 1 &amp; 2)</h1>
-<div class="time">Time: 2 minutes 30 seconds</div>
-<div class="slides">Slides: Slide 05 (Implementation Part 1) + Slide 06 (Implementation Part 2)</div>
+<h1>Student 3 - Implementation Code Walkthrough</h1>
+<div class="meta">Slides 6–7 | Time: 2 min 30 sec | Role: Show the code, explain the logic</div>
 
 <hr class="sep">
 
 <div class="item">
-  <div class="say">"Now I will explain the implementation. We have six blocks across two slides."</div>
-  <div class="do">Click to slide 05 - Implementation Part 1.</div>
+  <div class="say">"Now let me walk you through the actual code. Six blocks — three on each slide."</div>
+  <div class="do">Click to Slide 05 — Implementation Part 1.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Block 1 is the Data model. The Item class has fields id, type, name, category, date, location, contact, status."</div>
-  <div class="do">Point at block 1 heading and code.</div>
+  <div class="say">"Block one — the Data model."</div>
+  <div class="do">Point at Block 1 heading.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The diagram shows 8 fields separated by pipes. id pipe type pipe name and so on."</div>
-  <div class="do">Point at the diagram on the right side of block 1.</div>
+  <div class="say">"The Item class looks like this — class Item, with int id, String name. The constructor uses this dot id equals id to set the value."</div>
+  <div class="do">Point at the code snippet on the left side of Block 1.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Block 2 is File storage. Each line in items.txt is one item."</div>
-  <div class="do">Point at block 2 heading.</div>
+  <div class="say">"On the right side — the diagram shows all eight fields. id, type, name, category, date, location, contact, status. Separated by pipes in the file."</div>
+  <div class="do">Point at the diagram on the right side showing the 8 fields.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The code shows we split the line by pipe character using line dot split. Then we parse the id using Integer dot parseInt."</div>
-  <div class="do">Point at the code lines in block 2.</div>
+  <div class="say">"Block two — File storage. This is how we read and write data."</div>
+  <div class="do">Point at Block 2 heading.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The diagram shows the split result - 8 fields from p0 to p7."</div>
+  <div class="say">"Each line in items dot txt looks like this — 1 pipe LOST pipe Wallet pipe Bags and so on."</div>
+  <div class="do">Point at the example line in the code.</div>
+</div>
+
+<div class="item">
+  <div class="say">"To read it, we split by pipe. String array p equals line dot split. Then we parse the ID with Integer dot parseInt p of 0."</div>
+  <div class="do">Point at the split and parseInt code lines.</div>
+</div>
+
+<div class="item">
+  <div class="say">"The diagram shows the result — p0 through p7. Eight fields from one line."</div>
   <div class="do">Point at the diagram showing p0 p1 p2 etc.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Block 3 is Validation. We use regex to check date format."</div>
-  <div class="do">Point at block 3 heading.</div>
+  <div class="say">"Block three — Validation. We check the date format using regex."</div>
+  <div class="do">Point at Block 3 heading.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The regex is backslash d 2 hyphen backslash d 2 hyphen backslash d 4. This means 2 digits, hyphen, 2 digits, hyphen, 4 digits."</div>
-  <div class="do">Point at the regex in the code and diagram.</div>
+  <div class="say">"The regex is — backslash d 2, hyphen, backslash d 2, hyphen, backslash d 4. Two digits, hyphen, two digits, hyphen, four digits."</div>
+  <div class="do">Point at the regex in the code. Say each part slowly.</div>
 </div>
 
 <div class="item">
-  <div class="say">"15-09-2026 is accepted in green. 9/15/26 is rejected in red."</div>
-  <div class="do">Point at the green OK example and red REJECT example.</div>
+  <div class="say">"Look at the examples. 15-09-2026 — accepted, shown in green. 9 slash 15 slash 26 — rejected, shown in red. The color tells you everything."</div>
+  <div class="do">Point at the green OK example, then the red REJECT example. Pause on each.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Now part 2 - Search, Claim, and Menu loop."</div>
-  <div class="do">Click to slide 06 - Implementation Part 2.</div>
+  <div class="say">"Now part two — Search, Claim, and the Menu loop."</div>
+  <div class="do">Click to Slide 06 — Implementation Part 2.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Block 4 is Search. We use Java streams. items dot stream dot filter dot collect."</div>
-  <div class="do">Point at block 4 code.</div>
+  <div class="say">"Block four — Search. This is where streams shine."</div>
+  <div class="do">Point at Block 4 heading.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The filter checks if the name contains the keyword. The execution flow shows items stream, filter, collect, then a filtered list."</div>
-  <div class="do">Point at the execution flow diagram showing the pipeline.</div>
+  <div class="say">"The code is just five lines. Items dot stream. Dot filter — check if the name contains the keyword. Dot collect to list. That is it."</div>
+  <div class="do">Point at each line of code as you say it.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Block 5 is Claim. We loop through items, find the matching id, set status to RESOLVED, then rewrite the file."</div>
-  <div class="do">Point at block 5 code.</div>
+  <div class="say">"The execution flow on the right shows it visually. Items go in, stream, filter, collect — filtered list comes out. Clean pipeline."</div>
+  <div class="do">Point at the execution flow diagram. Trace the flow from left to right.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The execution flow shows before - id 7 status OPEN. After claim - id 7 status RESOLVED. Then rewrite items dot txt."</div>
-  <div class="do">Point at the before and after diagram in block 5.</div>
+  <div class="say">"Block five — Claim. This is a bit different."</div>
+  <div class="do">Point at Block 5 heading.</div>
 </div>
 
 <div class="item">
-  <div class="say">"Block 6 is the Menu loop. We use while true to keep the program running."</div>
-  <div class="do">Point at block 6 code.</div>
+  <div class="say">"We loop through all items. If the ID matches and status is not RESOLVED — we set status to RESOLVED. Then we rewrite the entire file."</div>
+  <div class="do">Point at the for loop, then the setStatus line, then the rewrite line.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The code reads user input, checks if it equals 1 to post lost, or 8 to break and exit."</div>
-  <div class="do">Point at the if statements in block 6.</div>
+  <div class="say">"Why rewrite? Because every line in the file contains the status. When status changes, we must update everything."</div>
+  <div class="do">Make a circular motion to indicate "everything."</div>
+  <div class="note">This is a key point — explain the why, not just the what.</div>
 </div>
 
 <div class="item">
-  <div class="say">"The execution flow shows the menu options - 1 Post Lost, 2 Post Found, 3 View Lost, 5 Search, 6 Claim, 8 Exit."</div>
+  <div class="say">"The execution flow shows it clearly. Before — id 7, status OPEN. After claim — id 7, status RESOLVED. Then rewrite items dot txt."</div>
+  <div class="do">Point at the before-after strip in the diagram.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Block six — the Menu loop. This keeps the program running."</div>
+  <div class="do">Point at Block 6 heading.</div>
+</div>
+
+<div class="item">
+  <div class="say">"While true — the program never stops until you choose exit. It reads your input with Scanner, checks if it equals 1 for post lost, or 8 to break."</div>
+  <div class="do">Point at the while loop, then the if statements.</div>
+</div>
+
+<div class="item">
+  <div class="say">"The menu on the right shows all options — 1 Post Lost, 2 Post Found, 3 View Lost, 5 Search, 6 Claim, 8 Exit. User input goes in, action comes out."</div>
   <div class="do">Point at the menu list in the execution flow.</div>
 </div>
 
 <div class="item">
-  <div class="say">"I will now hand over for the live demonstration."</div>
-  <div class="do">Gesture towards next presenter.</div>
+  <div class="say">"That is the code. Now let me hand over for the live demonstration — you will see it all running."</div>
+  <div class="do">Turn towards next speaker. Step back.</div>
 </div>
 
 </body>
