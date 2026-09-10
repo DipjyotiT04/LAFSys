@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    font-size: 24px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
+  }
+  .time {
+    font-size: 20px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .say {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+  }
+  .do {
+    font-size: 22px;
+    color: #555;
+    margin-top: 5px;
+    padding-left: 20px;
+    border-left: 3px solid #999;
+  }
+  .slide {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+  }
+</style>
+</head>
+<body>
+
+<h1>Student 2 - Class Design &amp; Java Concepts</h1>
+<div class="time">Time: 3 minutes</div>
+
+<div class="slide">
+  <div class="say">"Thank you. Now I will explain how our project is designed and what Java concepts we used."</div>
+  <div class="do">Action: Move to center. Show class diagram slide.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Our project has 6 classes. Each class has one job. This is called Separation of Concerns."</div>
+  <div class="do">Action: Point to class diagram. Count 6 on fingers.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Item.java is our data model. It has 8 fields - id, type, name, category, date, location, contact, and status."</div>
+  <div class="do">Action: Point to Item class on diagram.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"StorageManager handles all file reading and writing. It reads from and writes to data/items.txt."</div>
+  <div class="do">Action: Point to StorageManager class. Show file path.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"ItemService is the brain. It handles posting, searching, and claiming items."</div>
+  <div class="do">Action: Point to ItemService class.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Main.java is the user interface. It shows menus and reads your input."</div>
+  <div class="do">Action: Point to Main class.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Now let me explain the Java concepts. First - Classes and Objects. A class is a blueprint. An object is the actual thing made from it."</div>
+  <div class="do">Action: Use hands to show blueprint vs object.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Second - Encapsulation. We use getters to read data and only one setter for status. This protects our data."</div>
+  <div class="do">Action: Show getter/setter on diagram.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Third - Java Streams. Instead of writing long loops, we use streams to filter items. For example, to get only lost items, we filter by type equals LOST."</div>
+  <div class="do">Action: Show stream code snippet on screen.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Fourth - Lambda Expressions. These are short anonymous functions used with streams. Like i - arrow - i.getType equals LOST."</div>
+  <div class="do">Action: Point to lambda syntax on screen.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Fifth - Try With Resources. This automatically closes files after reading or writing. It prevents resource leaks."</div>
+  <div class="do">Action: Show try-with-resources code.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"The class dependency is simple. Main uses ItemService. ItemService uses StorageManager. StorageManager uses Item. Clean and simple."</div>
+  <div class="do">Action: Trace the dependency flow on diagram.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Now I will hand over to explain the actual implementation and code."</div>
+  <div class="do">Action: Gesture towards next presenter. Step back.</div>
+</div>
+
+</body>
+</html>

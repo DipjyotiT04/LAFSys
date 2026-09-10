@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    font-size: 24px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
+  }
+  .time {
+    font-size: 20px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .say {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+  }
+  .do {
+    font-size: 22px;
+    color: #555;
+    margin-top: 5px;
+    padding-left: 20px;
+    border-left: 3px solid #999;
+  }
+  .slide {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+  }
+</style>
+</head>
+<body>
+
+<h1>Student 3 - Implementation &amp; Code Explanation</h1>
+<div class="time">Time: 3 minutes</div>
+
+<div class="slide">
+  <div class="say">"Thank you. Now I will walk you through the actual code and how it works."</div>
+  <div class="do">Action: Open code editor or show code slides.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"We built the project in order. First Item.java - the data model. Then Validator. Then StorageManager. Then ItemService. Then Main. Finally Tests."</div>
+  <div class="do">Action: Show implementation order on screen.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Let me show you how posting an item works. When you type 1 in the menu, Main.java calls postItem method."</div>
+  <div class="do">Action: Show Main.java postItem method on screen.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"The method asks for name, category, date, location, and contact. It validates that required fields are not empty and date is in correct format."</div>
+  <div class="do">Action: Point to validation code lines.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Then it calls ItemService.postItem. This loads all existing items, finds the highest ID, creates a new item with ID plus one, and saves it."</div>
+  <div class="do">Action: Show ItemService.postItem code.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"The save happens in StorageManager.append. It opens the file in append mode and writes one line. The line format is ID pipe type pipe name and so on."</div>
+  <div class="do">Action: Show the pipe-delimited format on screen.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Now let me show you search. When you search by keyword, it loads all items and filters using Java streams. The filter checks if name, location, or category contains the keyword."</div>
+  <div class="do">Action: Show searchByKeyword code with stream pipeline.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"The claim process is interesting. It loads all items, finds the one with matching ID, changes its status to RESOLVED, and rewrites the entire file."</div>
+  <div class="do">Action: Show claimItem method. Emphasize rewrite.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"We rewrite because every line contains the status field. When status changes, we must update the file completely."</div>
+  <div class="do">Action: Show file before and after claim.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"The data file uses pipe as delimiter. Each line has 8 fields separated by pipes. This makes it easy to split and parse."</div>
+  <div class="do">Action: Show example file line on screen.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Error handling is built in. Missing files return empty lists. Bad input is caught and shown as friendly messages. The app never crashes."</div>
+  <div class="do">Action: Show error handling code examples.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"To compile, type javac dash d bin src slash star dot java. To run, type java dash cp bin Main."</div>
+  <div class="do">Action: Show compile and run commands.</div>
+</div>
+
+<div class="slide">
+  <div class="say">"Now I will hand over for the live demonstration and testing."</div>
+  <div class="do">Action: Gesture towards next presenter. Step back.</div>
+</div>
+
+</body>
+</html>
