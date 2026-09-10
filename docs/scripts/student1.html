@@ -3,91 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <style>
+  @page { size: A4; margin: 20mm; }
   body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 40px;
-    font-size: 24px;
-    line-height: 1.6;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.5;
   }
   h1 {
-    font-size: 36px;
+    font-size: 32px;
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #333;
-    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: #142640;
   }
   .time {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     color: #666;
-    margin-bottom: 30px;
-  }
-  .section {
     margin-bottom: 20px;
   }
-  .say {
-    font-size: 24px;
+  .slides {
+    font-size: 14px;
+    text-align: center;
+    color: #b8861a;
+    margin-bottom: 20px;
     font-weight: bold;
-    color: #000;
+  }
+  .item {
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+  .say {
+    font-size: 18px;
+    font-weight: bold;
+    color: #142640;
   }
   .do {
-    font-size: 22px;
-    color: #555;
-    margin-top: 5px;
-    padding-left: 20px;
-    border-left: 3px solid #999;
+    font-size: 16px;
+    color: #4a576b;
+    margin-top: 3px;
+    padding-left: 15px;
+    border-left: 3px solid #b8861a;
   }
-  .slide {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #ccc;
+  .sep {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 12px 0;
   }
 </style>
 </head>
 <body>
 
-<h1>Student 1 - Introduction, Problem &amp; Objectives</h1>
-<div class="time">Time: 2 minutes</div>
+<h1>Student 1 - Introduction, Problem &amp; Overview</h1>
+<div class="time">Time: 2 minutes 30 seconds</div>
+<div class="slides">Slides: Cover + Slide 01 (The Problem) + Slide 02 (Application Overview)</div>
 
-<div class="slide">
-  <div class="say">"Good morning everyone. Today we are presenting LAFSys - a Campus Lost and Found System."</div>
-  <div class="do">Action: Stand confident. Show title slide on screen.</div>
+<hr class="sep">
+
+<div class="item">
+  <div class="say">"Good morning. Our project is called LAFSys - a Campus Lost and Found Board."</div>
+  <div class="do">Point at the cover slide showing LAFSys title.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"Let me start with a simple question - how many of you have lost something on campus?"</div>
-  <div class="do">Action: Pause for 2 seconds. Look at audience.</div>
+<div class="item">
+  <div class="say">"It is a Java console application for posting, searching, and claiming items."</div>
+  <div class="do">Point at the tagline on the cover slide.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"Every day, students lose wallets, phones, books, and ID cards. Finding them is difficult because there is no central system."</div>
-  <div class="do">Action: Point to problem slide if available.</div>
+<div class="item">
+  <div class="say">"Now let me explain why we built this."</div>
+  <div class="do">Click to slide 01 - The Problem.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"Currently, people use social media, WhatsApp groups, or paper boards. These are scattered, not searchable, and items get lost forever."</div>
-  <div class="do">Action: Count problems on fingers - scattered, not searchable, no tracking.</div>
+<div class="item">
+  <div class="say">"Every day on campus, items are lost - and most are never returned."</div>
+  <div class="do">Point at the pull quote on slide 01.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"Our problem is clear - there is no centralized, digital system for managing lost and found items on campus."</div>
-  <div class="do">Action: Emphasize "centralized" and "digital".</div>
+<div class="item">
+  <div class="say">"This happens in hostels, libraries, labs, and cafeterias."</div>
+  <div class="do">Point at the locations line.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"Our objectives are simple. First - let students post lost items. Second - let them post found items. Third - enable search by keyword and category. Fourth - allow claiming items when found."</div>
-  <div class="do">Action: Count 4 objectives on fingers.</div>
+<div class="item">
+  <div class="say">"There are five practical reasons this project exists."</div>
+  <div class="do">Point at the five problems section.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"The system is built in Java, uses a text file for storage, and runs in the console. Simple, effective, and portable."</div>
-  <div class="do">Action: Show project structure slide if available.</div>
+<div class="item">
+  <div class="say">"First - no central place to record a lost item or report one that was found."</div>
+  <div class="do">Point at problem 01.</div>
 </div>
 
-<div class="slide">
-  <div class="say">"Now I will hand over to our next presenter who will explain the class design and Java concepts used."</div>
-  <div class="do">Action: Gesture towards next presenter. Step back.</div>
+<div class="item">
+  <div class="say">"Second - notice boards are static and scattered across many buildings."</div>
+  <div class="do">Point at problem 02.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Third - there is no way to search past reports."</div>
+  <div class="do">Point at problem 03.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Fourth - manual matching between finders and owners is slow and unreliable."</div>
+  <div class="do">Point at problem 04.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Fifth - there is no record of resolution, so the same item gets asked about again and again."</div>
+  <div class="do">Point at problem 05.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Now let me show you how our system works."</div>
+  <div class="do">Click to slide 02 - Application Overview.</div>
+</div>
+
+<div class="item">
+  <div class="say">"There are four steps. Step one - Post. Enter name, category, date, location, and contact."</div>
+  <div class="do">Point at step 1 on slide 02.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Step two - Save. The record is appended to items.txt on disk."</div>
+  <div class="do">Point at step 2. Emphasize the word appended.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Step three - Search. Anyone can browse or search the list anytime."</div>
+  <div class="do">Point at step 3.</div>
+</div>
+
+<div class="item">
+  <div class="say">"Step four - Claim. The owner marks the item as resolved."</div>
+  <div class="do">Point at step 4.</div>
+</div>
+
+<div class="item">
+  <div class="say">"The five major features are - Post lost or found, View all records, Search by keyword, Claim items, and Persist to items.txt."</div>
+  <div class="do">Point at the five feature cards one by one.</div>
+</div>
+
+<div class="item">
+  <div class="say">"I will now hand over to explain the Java concepts we used."</div>
+  <div class="do">Gesture towards next presenter.</div>
 </div>
 
 </body>
